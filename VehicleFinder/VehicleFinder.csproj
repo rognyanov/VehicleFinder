@@ -43,6 +43,9 @@
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -64,6 +67,27 @@
     <Compile Include="Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004111025347_InitialCreation.cs" />
+    <Compile Include="Migrations\202004111025347_InitialCreation.designer.cs">
+      <DependentUpon>202004111025347_InitialCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004111033493_AddedTables.cs" />
+    <Compile Include="Migrations\202004111033493_AddedTables.designer.cs">
+      <DependentUpon>202004111033493_AddedTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004111039140_AddedManyToManyExtraVehicle.cs" />
+    <Compile Include="Migrations\202004111039140_AddedManyToManyExtraVehicle.designer.cs">
+      <DependentUpon>202004111039140_AddedManyToManyExtraVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\BaseEntity.cs" />
+    <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Engine.cs" />
+    <Compile Include="Models\Enums\BodyStyle.cs" />
+    <Compile Include="Models\Enums\EngineType.cs" />
+    <Compile Include="Models\Extra.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\Vehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\VehicleService.cs" />
@@ -81,6 +105,15 @@
     </Compile>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004111025347_InitialCreation.resx">
+      <DependentUpon>202004111025347_InitialCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004111033493_AddedTables.resx">
+      <DependentUpon>202004111033493_AddedTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004111039140_AddedManyToManyExtraVehicle.resx">
+      <DependentUpon>202004111039140_AddedManyToManyExtraVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
