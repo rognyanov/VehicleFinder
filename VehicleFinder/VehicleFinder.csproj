@@ -66,6 +66,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\VehicleService.cs" />
+    <Compile Include="Views\AddVehicleUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AddVehicleUserControl.Designer.cs">
+      <DependentUpon>AddVehicleUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchVehiclesUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SearchVehiclesUserControl.Designer.cs">
+      <DependentUpon>SearchVehiclesUserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Launcher.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +91,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AddVehicleUserControl.resx">
+      <DependentUpon>AddVehicleUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SearchVehiclesUserControl.resx">
+      <DependentUpon>SearchVehiclesUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
