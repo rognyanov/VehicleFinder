@@ -35,10 +35,10 @@ namespace VehicleFinder.ViewModels
 
         public ICollection<string> getValidationErrors() 
         {
-            var context = new ValidationContext(this, serviceProvider: null, items: null);
+            var context = new ValidationContext(this);
             var results = new List<ValidationResult>();
 
-            var isValid = Validator.TryValidateObject(this, context, results);
+            var isValid = Validator.TryValidateObject(this, context, results, true);
 
             return results.Select(r => r.ErrorMessage).ToList();
         } 

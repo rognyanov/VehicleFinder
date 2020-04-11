@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.addVehicleGroupBox = new System.Windows.Forms.GroupBox();
+            this.engineNameTextBox = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.errorMessage = new System.Windows.Forms.Label();
             this.extrasGroupBox = new System.Windows.Forms.GroupBox();
             this.satNavCheckBox = new System.Windows.Forms.CheckBox();
@@ -52,8 +54,6 @@
             this.engineComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.brandTextBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.engineNameTextBox = new System.Windows.Forms.TextBox();
             this.addVehicleGroupBox.SuspendLayout();
             this.extrasGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -86,11 +86,27 @@
             this.addVehicleGroupBox.TabStop = false;
             this.addVehicleGroupBox.Text = "Add Vehicle";
             // 
+            // engineNameTextBox
+            // 
+            this.engineNameTextBox.Location = new System.Drawing.Point(190, 240);
+            this.engineNameTextBox.Name = "engineNameTextBox";
+            this.engineNameTextBox.Size = new System.Drawing.Size(333, 20);
+            this.engineNameTextBox.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(109, 243);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(75, 13);
+            this.label8.TabIndex = 17;
+            this.label8.Text = "Engine name :";
+            // 
             // errorMessage
             // 
             this.errorMessage.AutoSize = true;
             this.errorMessage.ForeColor = System.Drawing.Color.DarkRed;
-            this.errorMessage.Location = new System.Drawing.Point(33, 437);
+            this.errorMessage.Location = new System.Drawing.Point(187, 345);
             this.errorMessage.Name = "errorMessage";
             this.errorMessage.Size = new System.Drawing.Size(0, 13);
             this.errorMessage.TabIndex = 16;
@@ -103,27 +119,27 @@
             this.extrasGroupBox.Controls.Add(this.panoramicRoofCheckBox);
             this.extrasGroupBox.Controls.Add(this.heatedPartsCheckBox);
             this.extrasGroupBox.Controls.Add(this.leatherUpholsteryCheckBox);
-            this.extrasGroupBox.Location = new System.Drawing.Point(580, 243);
+            this.extrasGroupBox.Location = new System.Drawing.Point(597, 137);
             this.extrasGroupBox.Name = "extrasGroupBox";
             this.extrasGroupBox.Size = new System.Drawing.Size(200, 159);
-            this.extrasGroupBox.TabIndex = 15;
+            this.extrasGroupBox.TabIndex = 8;
             this.extrasGroupBox.TabStop = false;
             this.extrasGroupBox.Text = "Extras";
             // 
             // satNavCheckBox
             // 
             this.satNavCheckBox.AutoSize = true;
-            this.satNavCheckBox.Location = new System.Drawing.Point(18, 133);
+            this.satNavCheckBox.Location = new System.Drawing.Point(18, 136);
             this.satNavCheckBox.Name = "satNavCheckBox";
-            this.satNavCheckBox.Size = new System.Drawing.Size(63, 17);
+            this.satNavCheckBox.Size = new System.Drawing.Size(77, 17);
             this.satNavCheckBox.TabIndex = 5;
-            this.satNavCheckBox.Text = "Sat-nav";
+            this.satNavCheckBox.Text = "Navigation";
             this.satNavCheckBox.UseVisualStyleBackColor = true;
             // 
             // dashcamCheckBox
             // 
             this.dashcamCheckBox.AutoSize = true;
-            this.dashcamCheckBox.Location = new System.Drawing.Point(18, 110);
+            this.dashcamCheckBox.Location = new System.Drawing.Point(18, 113);
             this.dashcamCheckBox.Name = "dashcamCheckBox";
             this.dashcamCheckBox.Size = new System.Drawing.Size(71, 17);
             this.dashcamCheckBox.TabIndex = 4;
@@ -133,7 +149,7 @@
             // reversingCameraCheckBox
             // 
             this.reversingCameraCheckBox.AutoSize = true;
-            this.reversingCameraCheckBox.Location = new System.Drawing.Point(18, 92);
+            this.reversingCameraCheckBox.Location = new System.Drawing.Point(18, 90);
             this.reversingCameraCheckBox.Name = "reversingCameraCheckBox";
             this.reversingCameraCheckBox.Size = new System.Drawing.Size(112, 17);
             this.reversingCameraCheckBox.TabIndex = 3;
@@ -143,7 +159,7 @@
             // panoramicRoofCheckBox
             // 
             this.panoramicRoofCheckBox.AutoSize = true;
-            this.panoramicRoofCheckBox.Location = new System.Drawing.Point(18, 68);
+            this.panoramicRoofCheckBox.Location = new System.Drawing.Point(18, 67);
             this.panoramicRoofCheckBox.Name = "panoramicRoofCheckBox";
             this.panoramicRoofCheckBox.Size = new System.Drawing.Size(97, 17);
             this.panoramicRoofCheckBox.TabIndex = 2;
@@ -163,7 +179,7 @@
             // leatherUpholsteryCheckBox
             // 
             this.leatherUpholsteryCheckBox.AutoSize = true;
-            this.leatherUpholsteryCheckBox.Location = new System.Drawing.Point(18, 20);
+            this.leatherUpholsteryCheckBox.Location = new System.Drawing.Point(18, 22);
             this.leatherUpholsteryCheckBox.Name = "leatherUpholsteryCheckBox";
             this.leatherUpholsteryCheckBox.Size = new System.Drawing.Size(113, 17);
             this.leatherUpholsteryCheckBox.TabIndex = 0;
@@ -173,7 +189,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(317, 91);
+            this.label7.Location = new System.Drawing.Point(119, 162);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 14;
@@ -182,16 +198,16 @@
             // modelYearComboBox
             // 
             this.modelYearComboBox.FormattingEnabled = true;
-            this.modelYearComboBox.Location = new System.Drawing.Point(401, 88);
+            this.modelYearComboBox.Location = new System.Drawing.Point(190, 159);
             this.modelYearComboBox.Name = "modelYearComboBox";
-            this.modelYearComboBox.Size = new System.Drawing.Size(121, 21);
-            this.modelYearComboBox.TabIndex = 13;
+            this.modelYearComboBox.Size = new System.Drawing.Size(87, 21);
+            this.modelYearComboBox.TabIndex = 2;
             this.modelYearComboBox.SelectedValueChanged += new System.EventHandler(this.modelYearComboBox_SelectedValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 96);
+            this.label6.Location = new System.Drawing.Point(143, 137);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
             this.label6.TabIndex = 12;
@@ -199,17 +215,17 @@
             // 
             // modelTextBox
             // 
-            this.modelTextBox.Location = new System.Drawing.Point(100, 89);
+            this.modelTextBox.Location = new System.Drawing.Point(190, 134);
             this.modelTextBox.Name = "modelTextBox";
-            this.modelTextBox.Size = new System.Drawing.Size(100, 20);
-            this.modelTextBox.TabIndex = 11;
+            this.modelTextBox.Size = new System.Drawing.Size(333, 20);
+            this.modelTextBox.TabIndex = 1;
             // 
             // addNewCar
             // 
-            this.addNewCar.Location = new System.Drawing.Point(727, 427);
+            this.addNewCar.Location = new System.Drawing.Point(656, 302);
             this.addNewCar.Name = "addNewCar";
             this.addNewCar.Size = new System.Drawing.Size(141, 23);
-            this.addNewCar.TabIndex = 10;
+            this.addNewCar.TabIndex = 9;
             this.addNewCar.Text = "Add";
             this.addNewCar.UseVisualStyleBackColor = true;
             this.addNewCar.Click += new System.EventHandler(this.addNewCar_Click);
@@ -217,7 +233,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(286, 117);
+            this.label5.Location = new System.Drawing.Point(89, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 13);
             this.label5.TabIndex = 9;
@@ -226,7 +242,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(64, 133);
+            this.label4.Location = new System.Drawing.Point(156, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 8;
@@ -235,7 +251,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(592, 60);
+            this.label3.Location = new System.Drawing.Point(124, 216);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 7;
@@ -243,49 +259,50 @@
             // 
             // horsePowersTextBox
             // 
-            this.horsePowersTextBox.Location = new System.Drawing.Point(100, 130);
+            this.horsePowersTextBox.Location = new System.Drawing.Point(190, 293);
             this.horsePowersTextBox.Name = "horsePowersTextBox";
-            this.horsePowersTextBox.Size = new System.Drawing.Size(100, 20);
-            this.horsePowersTextBox.TabIndex = 6;
+            this.horsePowersTextBox.Size = new System.Drawing.Size(87, 20);
+            this.horsePowersTextBox.TabIndex = 7;
+            this.horsePowersTextBox.Text = "0";
             // 
             // manfactureYearComboBox
             // 
             this.manfactureYearComboBox.FormattingEnabled = true;
-            this.manfactureYearComboBox.Location = new System.Drawing.Point(401, 114);
+            this.manfactureYearComboBox.Location = new System.Drawing.Point(190, 186);
             this.manfactureYearComboBox.Name = "manfactureYearComboBox";
-            this.manfactureYearComboBox.Size = new System.Drawing.Size(121, 21);
-            this.manfactureYearComboBox.TabIndex = 5;
+            this.manfactureYearComboBox.Size = new System.Drawing.Size(87, 21);
+            this.manfactureYearComboBox.TabIndex = 3;
             // 
             // bodyStyleComboBox
             // 
             this.bodyStyleComboBox.FormattingEnabled = true;
-            this.bodyStyleComboBox.Location = new System.Drawing.Point(659, 52);
+            this.bodyStyleComboBox.Location = new System.Drawing.Point(190, 213);
             this.bodyStyleComboBox.Name = "bodyStyleComboBox";
-            this.bodyStyleComboBox.Size = new System.Drawing.Size(121, 21);
+            this.bodyStyleComboBox.Size = new System.Drawing.Size(194, 21);
             this.bodyStyleComboBox.TabIndex = 4;
             this.bodyStyleComboBox.Text = " ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(329, 52);
+            this.label2.Location = new System.Drawing.Point(115, 269);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Engine type:";
+            this.label2.Text = "Engine type :";
             // 
             // engineComboBox
             // 
             this.engineComboBox.FormattingEnabled = true;
-            this.engineComboBox.Location = new System.Drawing.Point(401, 48);
+            this.engineComboBox.Location = new System.Drawing.Point(190, 266);
             this.engineComboBox.Name = "engineComboBox";
-            this.engineComboBox.Size = new System.Drawing.Size(121, 21);
-            this.engineComboBox.TabIndex = 2;
+            this.engineComboBox.Size = new System.Drawing.Size(194, 21);
+            this.engineComboBox.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 55);
+            this.label1.Location = new System.Drawing.Point(143, 110);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 1;
@@ -293,26 +310,10 @@
             // 
             // brandTextBox
             // 
-            this.brandTextBox.Location = new System.Drawing.Point(100, 48);
+            this.brandTextBox.Location = new System.Drawing.Point(190, 108);
             this.brandTextBox.Name = "brandTextBox";
-            this.brandTextBox.Size = new System.Drawing.Size(100, 20);
+            this.brandTextBox.Size = new System.Drawing.Size(194, 20);
             this.brandTextBox.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(323, 16);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 13);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Engine name:";
-            // 
-            // engineNameTextBox
-            // 
-            this.engineNameTextBox.Location = new System.Drawing.Point(402, 8);
-            this.engineNameTextBox.Name = "engineNameTextBox";
-            this.engineNameTextBox.Size = new System.Drawing.Size(120, 20);
-            this.engineNameTextBox.TabIndex = 18;
             // 
             // AddVehicleUserControl
             // 

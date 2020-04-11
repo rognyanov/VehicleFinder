@@ -11,7 +11,7 @@ namespace VehicleFinder.Views
 {
     public partial class AddVehicleUserControl : UserControl
     {
-        private readonly VehicleService _vehicleService;
+        private VehicleService _vehicleService;
 
         public AddVehicleUserControl()
         {
@@ -31,7 +31,6 @@ namespace VehicleFinder.Views
                 .ToArray();
 
             manfactureYearComboBox.Enabled = false;
-            manfactureYearComboBox.Items.AddRange(years);
             modelYearComboBox.Items.AddRange(years);
         }
 
@@ -63,76 +62,117 @@ namespace VehicleFinder.Views
 
         private void addNewCar_Click(object sender, EventArgs e)
         {
-            int horsePowers;
-            var isHorsePowerParseble = int.TryParse(horsePowersTextBox.Text, out horsePowers);
-
-            if (!isHorsePowerParseble) 
-            {
-                errorMessage.Text = "Please enter valid horse powers value.";
+            if (!inputIsValid())
                 return;
-            }
 
-            if (manfactureYearComboBox.SelectedItem == null) 
-            {
-                errorMessage.Text = "Please pick the year of manufacturing.";
-                return;
-            }
-
-            if (modelYearComboBox.SelectedItem == null)
-            {
-                errorMessage.Text = "Please pick the year of model.";
-                return;
-            }
-
-            if (bodyStyleComboBox.SelectedItem == null)
-            {
-                errorMessage.Text = "Please pick the body style of the vehicle.";
-                return;
-            }
-
-            if (engineComboBox.SelectedItem == null)
-            {
-                errorMessage.Text = "Please pick the engine type of the vehicle.";
-                return;
-            }
-
-            var addVehicleViewModel = new AddVehicleViewModel()
+            var viewModel = new AddVehicleViewModel()
             {
                 Brand = brandTextBox.Text,
                 Model = modelTextBox.Text,
-                HorsePower = horsePowers,
+                HorsePower = int.Parse(horsePowersTextBox.Text),
                 EngineName = engineNameTextBox.Text,
                 EngineType = engineComboBox.Text,
-                ManufactureYear = int.Parse(manfactureYearComboBox.Text),
-                ModelYear = int.Parse(modelYearComboBox.Text),
-                BodyStyle = bodyStyleComboBox.Text,
+                ManufactureYear = int.Parse(manfactureYearComboBox.SelectedItem.ToString()),
+                ModelYear = int.Parse(modelYearComboBox.SelectedItem.ToString()),
+                BodyStyle = bodyStyleComboBox.SelectedItem.ToString(),
                 HasLeatherUpholstery = leatherUpholsteryCheckBox.Checked,
                 HasHeatedSeats = heatedPartsCheckBox.Checked,
                 HasPanoramicRoof = panoramicRoofCheckBox.Checked,
                 HasReversingCamera = reversingCameraCheckBox.Checked,
                 HasDashcam = dashcamCheckBox.Checked,
                 HasNavigation = satNavCheckBox.Checked
-        };
-            var errorMessages = addVehicleViewModel.getValidationErrors();
-            if (errorMessages.Any())
-            {
-                errorMessage.Text = errorMessages.First();
-                return;
-            }
-            else {
-                errorMessage.Text = "";
-            }
+            };
 
-            var result = _vehicleService.AddVehicle(addVehicleViewModel);
-            if (result) 
+            if (!modelIsValid(viewModel))
+                return;
+
+            PostExecute(_vehicleService.AddVehicle(viewModel));
+        }
+
+        private void PostExecute(bool isAdded)
+        {
+            if (isAdded)
             {
-                clearDialog();
+                ResetDialog();
+                MessageBox.Show("The vehicle has been added successfully.", "Vehicle Finder: Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Error ocurred adding the vehicle. Please contact your support.", "Vehicle Finder: Add Vehicle", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void clearDialog()
+        private void ResetDialog()
         {
-            throw new NotImplementedException();
+            brandTextBox.Text = "";
+            modelTextBox.Text = "";
+            horsePowersTextBox.Text = "0";
+            engineNameTextBox.Text = "";
+            engineComboBox.Text = "";
+            manfactureYearComboBox.Text = "";
+            manfactureYearComboBox.Enabled = false;
+            modelYearComboBox.Text = "";
+            bodyStyleComboBox.Text = "";
+            leatherUpholsteryCheckBox.Checked = false;
+            heatedPartsCheckBox.Checked = false;
+            panoramicRoofCheckBox.Checked = false;
+            reversingCameraCheckBox.Checked = false;
+            dashcamCheckBox.Checked = false;
+            satNavCheckBox.Checked = false;
+        }
+
+        private bool modelIsValid(AddVehicleViewModel viewModel)
+        {
+            var errorMessages = viewModel.getValidationErrors();
+
+            if (errorMessages.Any())
+            {
+                errorMessage.Text = errorMessages.First();
+                return false;
+            }
+            else
+            {
+                errorMessage.Text = "";
+                return true;
+            }
+        }
+
+        private bool inputIsValid()
+        {
+            int horsePowers;
+            var isHorsePowerParseble = int.TryParse(horsePowersTextBox.Text, out horsePowers);
+
+            if (!isHorsePowerParseble)
+            {
+                errorMessage.Text = "Please enter valid horse powers value.";
+                return false;
+            }
+
+            if (manfactureYearComboBox.SelectedItem == null)
+            {
+                errorMessage.Text = "Please pick the year of manufacturing.";
+                return false;
+            }
+
+            if (modelYearComboBox.SelectedItem == null)
+            {
+                errorMessage.Text = "Please pick the year of model.";
+                return false;
+            }
+
+            if (bodyStyleComboBox.SelectedItem == null)
+            {
+                errorMessage.Text = "Please pick the body style of the vehicle.";
+                return false;
+            }
+
+            if (engineComboBox.SelectedItem == null)
+            {
+                errorMessage.Text = "Please pick the engine type of the vehicle.";
+                return false;
+            }
+
+            return true;
         }
 
         private void modelYearComboBox_SelectedValueChanged(object sender, EventArgs e)
@@ -141,7 +181,7 @@ namespace VehicleFinder.Views
 
             manfactureYearComboBox.Enabled = true;
             manfactureYearComboBox.Items.Clear();
-            manfactureYearComboBox.Items.AddRange(Enumerable.Range(modelYear, 2021-modelYear).Select(x => x.ToString()).Reverse().ToArray());
+            manfactureYearComboBox.Items.AddRange(Enumerable.Range(modelYear, 2021 - modelYear).Select(x => x.ToString()).Reverse().ToArray());
         }
     }
 }
