@@ -67,19 +67,6 @@
     <Compile Include="Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202004111025347_InitialCreation.cs" />
-    <Compile Include="Migrations\202004111025347_InitialCreation.designer.cs">
-      <DependentUpon>202004111025347_InitialCreation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004111033493_AddedTables.cs" />
-    <Compile Include="Migrations\202004111033493_AddedTables.designer.cs">
-      <DependentUpon>202004111033493_AddedTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202004111039140_AddedManyToManyExtraVehicle.cs" />
-    <Compile Include="Migrations\202004111039140_AddedManyToManyExtraVehicle.designer.cs">
-      <DependentUpon>202004111039140_AddedManyToManyExtraVehicle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Engine.cs" />
@@ -91,6 +78,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\VehicleService.cs" />
+    <Compile Include="ViewModels\AddVehicleViewModel.cs" />
     <Compile Include="Views\AddVehicleUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,15 +93,6 @@
     </Compile>
     <EmbeddedResource Include="Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004111025347_InitialCreation.resx">
-      <DependentUpon>202004111025347_InitialCreation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004111033493_AddedTables.resx">
-      <DependentUpon>202004111033493_AddedTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202004111039140_AddedManyToManyExtraVehicle.resx">
-      <DependentUpon>202004111039140_AddedManyToManyExtraVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
