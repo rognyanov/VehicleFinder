@@ -9,8 +9,8 @@
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Engine> Engines { get; set; }
         public DbSet<Model> Models { get; set; }
-        public DbSet<Extra> Extra { get; set; }
-        public DbSet<Vehicle> Vehicle { get; set; }
+        public DbSet<Extra> Extras { get; set; }
+        public DbSet<Vehicle> Vehicles { get; set; }
 
         public AppDbContext()
             : base(ConfigurationManager.ConnectionStrings["default"].ConnectionString)
