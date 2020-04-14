@@ -7,5 +7,6 @@
         [Required(ErrorMessage ="Please enter the brand's name.")]
         [MaxLength(50, ErrorMessage = "Brand's name must be under 50 characters long.")]
         public string Name { get; set; }
+
     }
 }

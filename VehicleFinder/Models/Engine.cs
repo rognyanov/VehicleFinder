@@ -10,5 +10,6 @@
         public string Name { get; set; }
 
         public EngineType EngineType { get; set; }
+
     }
 }

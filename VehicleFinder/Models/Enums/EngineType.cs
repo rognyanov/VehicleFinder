@@ -2,12 +2,12 @@
 {
     public enum EngineType
     {
-        Invariant,
-        Petrol,
-        Diesel,
-        Gas,
-        Electric,
-        Hybrid,
-        PetrolAndGas
+        Invariant = 0,
+        Petrol = 1,
+        Diesel = 2,
+        Gas = 3,
+        Electric = 4,
+        Hybrid = 5,
+        PetrolAndGas = 6
     }
 }
